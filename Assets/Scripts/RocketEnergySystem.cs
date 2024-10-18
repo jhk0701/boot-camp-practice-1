@@ -52,9 +52,8 @@ public class RocketEnergySystem : MonoBehaviour
     void Update()
     {
         // 매프레임 마다 0.1f 씩 충전
-        // 만약 60프레임 밑으로 내려가는 환경이라면?
-        Fuel += REFILL * Time.deltaTime;
-
+        // 만약 60프레임 밑으로 내려가는 환경이라면? 보정 필요
+        Fuel += REFILL * Time.deltaTime * 60f;
         // 10 프레임 : Time.deltaTime = 0.1f
         // 60 프레임 : Time.deltaTime 0.0166666f = 0.1f / 6f
         
